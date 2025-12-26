@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Advanced Form Demo</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+
+    <form
+      action="https://example.com/submit"
+      method="POST"
+      enctype="multipart/form-data"
+      novalidate
+      onsubmit="handleSubmit(event)"
+    >
+      <!-- Label + name importance -->
+      <label for="username">Username</label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter username"
+        required
+      /><br /><br />
+
+      <!-- Placeholder is NOT a label -->
+      <input
+        type="email"
+        name="email"
+        placeholder="Email (no label here)"
+        required
+      /><br /><br />
+
+      <!-- Radio group via same name -->
+      <p>Gender:</p>
+      <label> <input type="radio" name="gender" value="male" /> Male </label>
+      <label> <input type="radio" name="gender" value="female" /> Female </label
+      ><br /><br />
+
+      <!-- Checkbox default value -->
+      <label>
+        <input type="checkbox" name="terms" />
+        Accept Terms </label
+      ><br /><br />
+
+      <!-- Disabled field -->
+      <input
+        type="text"
+        name="ignoredField"
+        value="This will NOT be submitted"
+        disabled
+      /><br /><br />
+
+      <!-- File upload -->
+      <label>
+        Upload Resume:
+        <input type="file" name="resume" /> </label
+      ><br /><br />
+
+      <!-- Range -->
+      <label>
+        Experience:
+        <input type="range" name="experience" min="0" max="10" /> </label
+      ><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault(); // stops page reload
+        alert("Form submitted via JavaScript (no reload)");
+      }
+    </script>
+  </body>
+</html>

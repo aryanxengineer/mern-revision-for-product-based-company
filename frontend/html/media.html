@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Advanced Media Demo</title>
+  </head>
+  <body>
+    <h1>Smart Media Player</h1>
+
+    <!-- VIDEO -->
+    <h2>Video Demo</h2>
+    <video width="400" muted autoplay loop controls preload="metadata">
+      <!-- Order matters -->
+      <source src="sample-video.webm" type="video/webm" />
+      <source
+        src="sample-video.mp4"
+        type="video/mp4"
+        media="(min-width: 600px)"
+      />
+
+      Your browser does not support video playback.
+    </video>
+
+    <p>This video autoplays because it is muted.</p>
+
+    <!-- AUDIO -->
+    <h2>Audio Demo</h2>
+    <audio controls preload="none">
+      <source src="sample-audio.ogg" type="audio/ogg" />
+      <source src="sample-audio.mp3" type="audio/mpeg" />
+
+      Audio playback is not supported in your browser.
+    </audio>
+
+    <!-- JS CONTROL -->
+    <h2>JavaScript Media Control</h2>
+    <button onclick="playVideo()">Play Video</button>
+    <button onclick="pauseVideo()">Pause Video</button>
+
+    <script>
+      const video = document.querySelector("video");
+
+      function playVideo() {
+        video.play();
+      }
+
+      function pauseVideo() {
+        video.pause();
+      }
+    </script>
+  </body>
+</html>
